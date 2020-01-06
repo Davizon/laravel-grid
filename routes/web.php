@@ -12,6 +12,6 @@
 */
 
 
-Route::resource('/products', 'DillerController');
+Route::resource('/products', 'ProductController');
 
-Route::get('/', 'HomeController');
+Route::get('/', 'HomeController@index');
