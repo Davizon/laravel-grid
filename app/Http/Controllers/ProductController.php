@@ -15,8 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = product::all();
-        return view('frontend.home', 
-        [ 
+        return view('backend.home',
+        [
             'products' => $products
 
         ]
@@ -28,9 +28,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(product $Product)
+    public function create()
     {
-        return view('frontend.create');
+        return view('backend.create');
     }
 
     /**

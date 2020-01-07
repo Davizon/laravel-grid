@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="col">
-        <form action="/expense_reports" method="POST">
+        <form action="/products" method="POST">
             @csrf
             <div class="form-group">
               <label for="title">Nombre:</label>
