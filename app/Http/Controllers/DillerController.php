@@ -23,7 +23,7 @@ class DillerController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.create');
     }
 
     /**

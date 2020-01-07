@@ -14,7 +14,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return "Hola";
+        $products = product::all();
+        return view('frontend.home', 
+        [ 
+            'products' => $products
+
+        ]
+    );
     }
 
     /**
@@ -22,9 +28,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(product $Product)
     {
-        return "Crear";
+        return view('frontend.create');
     }
 
     /**
@@ -35,7 +41,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Products = new product();
+        $Products->name = $request->get('name');
+        $Products->description = $request->get('description');
+        $Products->isTrending = $request->get('isTrending');
+        $Products->price = $request->get('price');
+        $Products->image = $request->get('image');
+        $Products->save();
+
+        return redirect('/products/');
+
     }
 
     /**

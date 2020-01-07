@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('home.index', [
+        return view('frontend.Home', [
             'products' => Product::all(),
             'categories' => Category::all()
         ]);
