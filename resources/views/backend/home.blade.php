@@ -10,6 +10,7 @@
 <body>
     @foreach($products as $product)
         <h1>{{$product->name}}</h1>
+        <a href="/products/{{ $product->id }}/edit">Edit</a>
         @endforeach
 </body>
 </html>
