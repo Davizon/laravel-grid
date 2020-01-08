@@ -87,17 +87,16 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
-        dd('put update');
-        // $product = product::find($id);
-        // $product->name = $request->get('name');
-        // $product->description = $request->get('description');
-        // $product->isTrending = $request->get('isTrending');
-        // $product->price = $request->get('price');
-        // $product->image = $request->get('image');
-        // $product->save();
+    {
+         $product = product::find($id);
+         $product->name = $request->get('name');
+         $product->description = $request->get('description');
+         $product->isTrending = $request->get('isTrending');
+         $product->price = $request->get('price');
+         $product->image = $request->get('image');
+         $product->save();
 
-        // return redirect('/products/');
+         return redirect('/products');
     }
 
     /**
