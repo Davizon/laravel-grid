@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,11 @@ class ProductController extends Controller
         $Products->image = $request->get('image');
         $Products->save();
 
+        $category = new Category();
+        $category->product_id = $Products->id;
+        $category->name = $request->get('name');
+        $category->categoryIsHome = $request->get('categoryIsHome');
+        $category->save();
         return redirect('/products/');
 
     }
@@ -73,8 +79,11 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = Product::findOrFail($id);
+        $category = Product::findOrFail($id);
         return view('backend.edit', [
-            'product' => $products
+            'product' => $products,
+            'category' => $category
+
         ]);
 
     }
@@ -87,17 +96,20 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
-        dd('put update');
-        // $product = product::find($id);
-        // $product->name = $request->get('name');
-        // $product->description = $request->get('description');
-        // $product->isTrending = $request->get('isTrending');
-        // $product->price = $request->get('price');
-        // $product->image = $request->get('image');
-        // $product->save();
+    {
+         $product = product::findOrFail($id);
+         $product->name = $request->get('name');
+         $product->description = $request->get('description');
+         $product->isTrending = $request->get('isTrending');
+         $product->price = $request->get('price');
+         $product->image = $request->get('image');
+         $product->save();
 
-        // return redirect('/products/');
+        $category =  Category::findOrFail($id);
+        $category->name = $request->get('name');
+        $category->categoryIsHome = $request->get('categoryIsHome');
+        $category->save();
+         return redirect('/products/');
     }
 
     /**

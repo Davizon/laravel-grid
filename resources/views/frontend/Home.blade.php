@@ -29,11 +29,11 @@
                   <div class="Home__Header--navbar">
                       <div class="Home__Header--navbar-links">
                           <div class="link"><a href="/">Home</a></div>
-                          <div class="link"><a href="/">About</a></div>
-                          <div class="link"><a href="/">Tienda</a></div>
+                          <div class="link"><a href="/about">About</a></div>
+                          <div class="link"><a href="/shop">Tienda</a></div>
                       </div>
                       <div class="Home__Header--navbar-logo">
-                          <img src="{{ asset('assets/images/logo/TigersDiller.png') }}" alt="">
+                          <a href="/"><img src="{{ asset('assets/images/logo/TigersDiller.png') }}" alt=""></a>
                       </div>
                       <div class="Home__Header--navbar-icons">
                         <a href="/">Iniciar Sesion</a>
@@ -44,43 +44,43 @@
                   <div class="Home__Portada--details">
                     <div>
                       <span>Oferta Exclusiva de 40% de Descuento</span>
-                      <h1>Lamborghini Veneno <br>Sport</h1>
+                      <h1>Chevrolet Camaro Negro<br> Deportivo</h1>
                       <h5>USD<strong>$12,000.00</strong></h5>
                       <button>Shop Now</button>
                     </div>
                   </div>
                   <div class="Home__Portada--image">
-                      <img src="" alt="">
+                      <img style="width: 100%" src="https://www.chevrolet.com.mx/content/dam/chevrolet/na/mx/es/index/performance/2019-camaro/colorizer/01-images/2019-camaro-black.jpg?imwidth=1200" alt="">
                   </div>
-                  <div class="Home__Portada--bar">
-                     <div class="Home__Portada--bar-sections">
-                         <h4>Lo mas novedoso</h4>
-                         <span>Tenemos la mejor calidad del mercado.</span>
-                     </div>
-                     <div class="Home__Portada--bar-sections">
-                         <h4>Algo personalizado?</h4>
-                         <span>Tambien podemos personalizar tu vehiculo.</span>
-                     </div>
-                     <div class="Home__Portada--bar-sections">
-                         <h4>No tienes suficiente dinero?</h4>
-                         <span>Con nuestros planes puedes sacar uno y pagarlo poco a poco.</span>
-                     </div>
-                     <div class="Home__Portada--bar-sections">
-                         <h4>Algo mas?</h4>
-                         <span>Contactanos si deseas alguna informacion especifica.</span>
-                    </div>
-                  </div>
+{{--                  <div class="Home__Portada--bar">--}}
+{{--                     <div class="Home__Portada--bar-sections">--}}
+{{--                         <h4>Lo mas novedoso</h4>--}}
+{{--                         <span>Tenemos la mejor calidad del mercado.</span>--}}
+{{--                     </div>--}}
+{{--                     <div class="Home__Portada--bar-sections">--}}
+{{--                         <h4>Algo personalizado?</h4>--}}
+{{--                         <span>Tambien podemos personalizar tu vehiculo.</span>--}}
+{{--                     </div>--}}
+{{--                     <div class="Home__Portada--bar-sections">--}}
+{{--                         <h4>No tienes suficiente dinero?</h4>--}}
+{{--                         <span>Con nuestros planes puedes sacar uno y pagarlo poco a poco.</span>--}}
+{{--                     </div>--}}
+{{--                     <div class="Home__Portada--bar-sections">--}}
+{{--                         <h4>Algo mas?</h4>--}}
+{{--                         <span>Contactanos si deseas alguna informacion especifica.</span>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
               </div>
               <div class="Home__Trending">
                   <div class="Home__Trending--title">
-                      <h2> --> Trending <-- </h2>
+                      <h2> Trending</h2>
                       <span>Lo mas visto esta semana.</span>
                   </div>
                   <div class="Home__Trending--products">
                       @foreach($products as $product)
                           @if($product->isTrending === 0)
                               <div class="Home__Trending--products-product">
-                                  <img src="{{$product->image}}" alt="">
+                                  <div class="image-home"><img src="{{$product->image}}" alt=""></div>
                                   <p class="product-name">{{$product->name}}</p>
                                   <p class="product-price">USD ${{$product->price}}</p>
                               </div>
@@ -100,7 +100,7 @@
                             @foreach($categories as $category)
                                 @if($producto->id === $category->product_id && $category->categoryIsHome === 0)
                                     <div class="Home__Category--products-product">
-                                        <img src="{{$product->image}}" alt="">
+                                        <div class="image-home"><img src="{{$producto->image}}" alt=""></div>
                                         <p class="product-name">{{$producto->name}}</p>
                                         <p class="product-price">USD ${{$producto->price}}</p>
                                     </div>

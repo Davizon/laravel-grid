@@ -30,6 +30,7 @@
     grid-template-columns: 1.1fr .3fr 1fr;
     height: 100%;
     background-color: #fff;
+    box-shadow: 0 2px 4px #eee;
 }
 .Home__Header--navbar-links {
     margin-left: 6.1rem;
@@ -72,7 +73,7 @@
     grid-template-rows: 1fr 1fr;
     height: 100%;
     width: 100%;
-    grid-template-areas: 
+    grid-template-areas:
     'details image'
     'details image'
     ;
@@ -99,7 +100,7 @@
 }
 
 .About__information--image {
-    grid-area: image; 
+    grid-area: image;
     background: #629544;
     padding: 30px;
 }

@@ -26,8 +26,22 @@
               <input type="text" class="form-control" id="description" name="description" placeholder="Escribe una descripcion" value="{{ old('description') }}">
             </div>
             <div class="form-group">
-              <label for="title">isTrending:</label>
-              <input type="text" class="form-control" id="isTrending" name="isTrending" placeholder="Escribe si es trending" value="{{ old('isTrending') }}">
+                <label for="isTrending">La Secion de Trending Home:</label>
+                <select class="form-control" id="isTrending" name="isTrending">
+                    <option value="0">Si</option>
+                    <option value="1">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isCategoryHome">Categoria De la Pagina de Home:</label>
+                <select class="form-control" id="isCategoryHome" name="isCategoryHome">
+                    <option value="0">Si</option>
+                    <option value="1">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Categoria:</label>
+                <input type="text" class="form-control" id="category" name="category" placeholder="Escribe la url de la imagen" value="{{ old('image') }}">
             </div>
             <div class="form-group">
               <label for="title">Precio:</label>

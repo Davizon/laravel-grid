@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}">
 </head>
 <body>
     <div id="app">
@@ -26,11 +27,11 @@
                   <div class="Home__Header--navbar">
                       <div class="Home__Header--navbar-links">
                           <div class="link"><a href="/">Home</a></div>
-                          <div class="link"><a href="/">About</a></div>
-                          <div class="link"><a href="/">Tienda</a></div>
+                          <div class="link"><a href="/about">About</a></div>
+                          <div class="link"><a href="/shop">Tienda</a></div>
                       </div>
                       <div class="Home__Header--navbar-logo">
-                          <img src="images/TigersDiller.png" alt="">
+                          <a href="/"><img src="{{ asset('assets/images/logo/TigersDiller.png') }}" alt=""></a>
                       </div>
                       <div class="Home__Header--navbar-icons">
                         <a href="/">Iniciar Sesion</a>
@@ -43,7 +44,7 @@
                   </div>
                   <div class="About__information">
                       <div class="About__information--image">
-                          <img src="images/about.png" alt="">
+                          <img src="{{ asset('assets/images/about.png') }}" alt="">
                       </div>
                       <div class="About__information--details">
                         <div>
@@ -63,26 +64,26 @@
                     </div>
                     <div class="About__profiles">
                         <div class="About__profiles--profile">
-                            <img src="images/5.jpg" alt="">
+                            <img src="{{ asset('assets/images/5.jpg') }}" alt="">
                             <a href="https://www.facebook.com/AngelBather" target="_blanc">Angel Bather</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="images/1.jpg" alt="">
+                            <img src="{{ asset('assets/images/4.jpg') }}" alt="">
                             <a href="https://www.facebook.com/angel.pinales.58" target="_blanc">Angel Pinales</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="images/3.jpg" alt="">
+                            <img src="{{ asset('assets/images/3.jpg') }}" alt="">
                             <a href="https://www.facebook.com/frankling.santos.10" target="_blanc">Frankling Santos</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="images/2.jpg" alt="">
+                            <img src="{{ asset('assets/images/2.jpg') }}" alt="">
                             <a href="https://www.facebook.com/profile.php?id=100006916784722" target="_blanc">Jefrey Castillo</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="images/4.jpg" alt="">
+                            <img src="{{ asset('assets/images/1.jpg') }}" alt="">
                             <a href="https://www.facebook.com/profile.php?id=100012001510358" target="_blanc">Oscar Beltre</a>
                         </div>
-                    </div>                   
+                    </div>
                  </div>
                   </div>
               </div>

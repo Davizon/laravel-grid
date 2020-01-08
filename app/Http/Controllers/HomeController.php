@@ -16,10 +16,12 @@ class HomeController extends Controller
     }
 
     public function shop() {
-        return view('backend.shop');
+        return view('frontend.shop', [
+            'products' => Product::all()
+        ]);
     }
 
     public function about() {
-        return view('backend.about');
+        return view('frontend.about');
     }
 }
