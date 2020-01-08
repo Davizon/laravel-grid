@@ -15,3 +15,7 @@
 Route::resource('/products', 'ProductController');
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/shop', 'HomeController@shop');
+
+Route::get('/about', 'HomeController@about');

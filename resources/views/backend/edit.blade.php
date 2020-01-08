@@ -15,30 +15,31 @@
 
   <div class="row">
     <div class="col">
-      <form action="/products/{{ $product->id }}/edit" method="POST">
-          {{ csrf_field() }}
-          {{ method_field('PUT') }}
-          
+      <form action="/products/{{ $product->id }}" method="POST">
+          @csrf
+          @method('PUT')
           <div class="form-group">
-            <label for="name">Nuevo Nombre:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Escribe un nombre">
-            <input type="hidden" name="_method" value="PUT">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{$product->name}}" placeholder="Escribe un nombre">
           </div>
           <div class="form-group">
-            <label for="name">Nueva Descripcion:</label>
-            <input type="text" class="form-control" id="description" name="description" placeholder="Escribe una descripcion">
+            <label for="description">Descripcion:</label>
+            <input value="{{$product->description}}" type="text" class="form-control" id="description" name="description" placeholder="Escribe una descripcion">
           </div>
           <div class="form-group">
-            <label for="name">Nuevo isTrending:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Escribe un isTrending">
+            <label for="isTrending">isTrending:</label>
+              <select class="form-control" id="isTrending" name="isTrending">
+                  <option value="0">Si</option>
+                  <option value="1">No</option>
+              </select>
           </div>
           <div class="form-group">
-            <label for="name">Nuevo Precio:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Escribe un precio">
+            <label for="price">Precio:</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{$product->price}}" placeholder="Escribe un precio">
           </div>
           <div class="form-group">
-            <label for="name">Nueva URL:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Escribe la URL de la imagen">
+            <label for="image">Image URL:</label>
+            <input type="text" class="form-control" id="image" name="image" value="{{$product->image}}" placeholder="Escribe la URL de la imagen">
           </div>
           <button class="btn btn-primary" type="submit">Submit</button>
       </form>

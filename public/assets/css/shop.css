@@ -1,0 +1,136 @@
+.Home__Header {
+    display: grid;
+    grid-template-rows: 50px 80px;
+    width: 100%;
+    z-index: 5;
+}
+.Home__Header--infobar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    border-bottom: 1px solid rgba(49, 49, 49, .3);
+}
+.Home__Header--infobar--contact {
+    display: flex;
+    align-items: center;
+    margin-left: 8rem;
+}
+.Home__Header--infobar-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 4rem;
+}
+.Home__Header--infobar-social i {
+    padding-right: 10px;
+}
+.Home__Header--navbar {
+    display: grid;
+    grid-template-columns: 1.1fr .3fr 1fr;
+    height: 100%;
+    background-color: #fff;
+}
+.Home__Header--navbar-links {
+    margin-left: 6.1rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+.link a:nth-child(1) {
+    margin-left: 2rem;
+}
+.link a {
+    margin: 0;
+}
+.Home__Header--navbar-logo {
+    display: flex;
+    align-items: center;
+}
+.Home__Header--navbar-logo img{
+    max-width: 120px;
+    margin-left: 100px;
+}
+.Home__Header--navbar-icons{
+    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    margin-right: 4.5rem;
+}
+.shop {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shop__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+}
+.shop__title h1 {
+    margin: 0 0 0 25px;
+}
+.shop__sections {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    'products products products products'
+    ;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.shop__sections--product {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #BABCBC;
+}
+
+.shop__sections--product h4,
+.shop__sections--product p {
+    text-align: center;
+}
+
+.shop__sections--product img {
+    height: 150px;
+}
+.shop__sections--product p {
+    font-size: 20px;
+}
+
+.details {
+    color: white;
+    opacity: 0;
+}
+strong {
+    color: #B22618;
+    font-size: 20px;
+}
+
+.shop__sections--product:hover .details {
+    opacity: 1;
+    transition: 450ms;
+}
+.button {
+    padding: 10px;
+    background: rgba(250, 53, 34, .7);
+    border: 2px solid #FA3522;
+
+}
+.button:hover {
+    border: 2px solid blue;
+    opacity: .9;
+}

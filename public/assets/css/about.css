@@ -1,0 +1,111 @@
+
+.Home__Header {
+    display: grid;
+    grid-template-rows: 50px 80px;
+    width: 100%;
+    z-index: 5;
+}
+.Home__Header--infobar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    border-bottom: 1px solid rgba(49, 49, 49, .3);
+}
+.Home__Header--infobar--contact {
+    display: flex;
+    align-items: center;
+    margin-left: 8rem;
+}
+.Home__Header--infobar-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 4rem;
+}
+.Home__Header--infobar-social i {
+    padding-right: 10px;
+}
+.Home__Header--navbar {
+    display: grid;
+    grid-template-columns: 1.1fr .3fr 1fr;
+    height: 100%;
+    background-color: #fff;
+}
+.Home__Header--navbar-links {
+    margin-left: 6.1rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+.link a:nth-child(1) {
+    margin-left: 2rem;
+}
+.link a {
+    margin: 0;
+}
+.Home__Header--navbar-logo {
+    display: flex;
+    align-items: center;
+}
+.Home__Header--navbar-logo img{
+    max-width: 120px;
+    margin-left: 100px;
+}
+.Home__Header--navbar-icons{
+    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    margin-right: 4.5rem;
+}
+
+.About {
+    margin-top: 60px;
+}
+
+.About__information {
+    display: grid;
+    grid-template-columns: 1fr 700px;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: 
+    'details image'
+    'details image'
+    ;
+}
+
+.About__information--details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #629544;
+    padding: 30px;
+    color: white;
+}
+.About__information--details h1 {
+    margin-top: 10px;
+}
+.About__information--details ul {
+    list-style: none;
+}
+.About__information--details ul li a {
+    color: white;
+}
+
+.About__information--image {
+    grid-area: image; 
+    background: #629544;
+    padding: 30px;
+}
+
+.About__information--image img {
+    width: 100%;
+    height: 100%;
+}
+

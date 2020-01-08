@@ -14,4 +14,12 @@ class HomeController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function shop() {
+        return view('backend.shop');
+    }
+
+    public function about() {
+        return view('backend.about');
+    }
 }
