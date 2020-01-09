@@ -1,6 +1,7 @@
-@extends('plantilla')
+@extends('layouts.app')
 
-@section('seccion')
+@section('content')
+ <div class="container">
  <div class="row">
     <div class="col">
       <h1>Nuevo Producto</h1>
@@ -33,8 +34,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="isCategoryHome">Categoria De la Pagina de Home:</label>
-                <select class="form-control" id="isCategoryHome" name="isCategoryHome">
+                <label for="categoryIsHome">Categoria De la Pagina de Home:</label>
+                <select class="form-control" id="categoryIsHome" name="categoryIsHome">
                     <option value="0">Si</option>
                     <option value="1">No</option>
                 </select>
@@ -55,4 +56,5 @@
         </form>
       </div>
     </div>
+  </div>
 @endsection

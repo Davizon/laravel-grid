@@ -77,7 +77,7 @@
                       <span>Lo mas visto esta semana.</span>
                   </div>
                   <div class="Home__Trending--products">
-                      @foreach($products as $product)
+                      @foreach($products ?? '' as $product)
                           @if($product->isTrending === 0)
                               <div class="Home__Trending--products-product">
                                   <div class="image-home"><img src="{{$product->image}}" alt=""></div>
@@ -96,7 +96,7 @@
                       <span><a href="">Ver todo</a></span>
                     </div>
                     <div class="Home__Category--products">
-                        @foreach($products as $producto)
+                        @foreach($products ?? '' as $producto)
                             @foreach($categories as $category)
                                 @if($producto->id === $category->product_id && $category->categoryIsHome === 0)
                                     <div class="Home__Category--products-product">

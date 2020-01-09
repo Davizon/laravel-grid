@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('frontend.Home', [
-            'products' => Product::all(),
-            'categories' => Category::all()
-        ]);
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function shop() {
-        return view('frontend.shop', [
-            'products' => Product::all()
-        ]);
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 
-    public function about() {
-        return view('frontend.about');
+    public function home_products()
+    {
+        return view('frontend.home');
     }
 }

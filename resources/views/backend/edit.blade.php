@@ -1,6 +1,7 @@
-@extends('plantilla')
+@extends('layouts.app')
 
-@section('seccion')
+@section('content')
+<div class="container">
 <div class="row">
   <div class="col">
     <h1>Editar producto {{ $product->id }}</h1>
@@ -56,4 +57,5 @@
       </form>
     </div>
   </div>
+</div>
 @endsection

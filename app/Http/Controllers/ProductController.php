@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +58,7 @@ class ProductController extends Controller
 
         $category = new Category();
         $category->product_id = $Products->id;
-        $category->name = $request->get('name');
+        $category->name = $request->get('category');
         $category->categoryIsHome = $request->get('categoryIsHome');
         $category->save();
         return redirect('/products/');
@@ -79,7 +85,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = Product::findOrFail($id);
-        $category = Product::findOrFail($id);
+        $category = Category::findOrFail($id);
         return view('backend.edit', [
             'product' => $products,
             'category' => $category
@@ -106,7 +112,7 @@ class ProductController extends Controller
          $product->save();
 
         $category =  Category::findOrFail($id);
-        $category->name = $request->get('name');
+        $category->name = $request->get('category');
         $category->categoryIsHome = $request->get('categoryIsHome');
         $category->save();
          return redirect('/products/');

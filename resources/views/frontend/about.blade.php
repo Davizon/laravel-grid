@@ -68,7 +68,7 @@
                             <a href="https://www.facebook.com/AngelBather" target="_blanc">Angel Bather</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="{{ asset('assets/images/4.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/1.jpg') }}" alt="">
                             <a href="https://www.facebook.com/angel.pinales.58" target="_blanc">Angel Pinales</a>
                         </div>
                         <div class="About__profiles--profile">
@@ -80,7 +80,7 @@
                             <a href="https://www.facebook.com/profile.php?id=100006916784722" target="_blanc">Jefrey Castillo</a>
                         </div>
                         <div class="About__profiles--profile">
-                            <img src="{{ asset('assets/images/1.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/4.jpg') }}" alt="">
                             <a href="https://www.facebook.com/profile.php?id=100012001510358" target="_blanc">Oscar Beltre</a>
                         </div>
                     </div>

@@ -1,3 +1,5 @@
+.Home {
+}
 .Home__Header {
     display: grid;
     grid-template-rows: 50px 80px;
@@ -29,6 +31,7 @@
     grid-template-columns: 1.1fr .3fr 1fr;
     height: 100%;
     background-color: #fff;
+    box-shadow: 0 2px 4px #eee;
 }
 .Home__Header--navbar-links {
     margin-left: 6.1rem;
@@ -60,88 +63,37 @@
     text-transform: uppercase;
     margin-right: 4.5rem;
 }
-
-.About {
-    height: 100%;
-    margin-top: 60px;
+.Home__products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
 }
-.About__Title {
+
+.Home__products--product {
+    width: 100%;
+    margin-top: 50px;
+    padding: 40px;
+}
+
+.Home__products--product img {
+    width: 100%;
     height: 200px;
-    background: gray;
+}
+
+.Home__products--details {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    font-size: 20px;
+}
+h1.Home__products--details {
+    font-weight: normal;
+}
+
+a.Home__products--details {
+    text-decoration: none;
     color: white;
-    margin-bottom: 50px;
+    background-color: blue;
 }
 
-
-.About__information {
-    display: grid;
-    grid-template-columns: 500px 1fr;
-    height: 100%;
-    width: 100%;
-    grid-template-areas: 
-    'image details'
-    ;
-    gap: 50px;
-    padding: 40px;
-}
-
-.About__information--details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: details;
-    height: 100%;
-    margin-left: 30px;
-}
-.About__information--details h2 {
-    text-transform: uppercase;
-    color: #E32F1D;
-    margin-bottom: 25px;
-}
-.About__information--details p {
-}
-
-
-.About__information--image {
-    height: 100%;
-    grid-area: image; 
-}
-
-.About__information--image img {
-    width: 100%;
-    height: 500px;
-}
-
-.About__profiles {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    padding: 40px;
-}
-
-.About__profiles--profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-}
-
-.About__profiles--profile img {
-    width: 210px;
-    height: 220px;
-    grid-area: image;
-    border-radius: 120px;
-
-}
-
-.About__profiles--profile a {
-    margin-right: -3px;
-    color: black;
-    grid-area: names;
-}
 
