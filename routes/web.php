@@ -14,8 +14,13 @@
 
 Route::resource('/products', 'ProductController');
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@home_products');
 
 Route::get('/shop', 'HomeController@shop');
 
 Route::get('/about', 'HomeController@about');
+
+Auth::routes();
+
+Route::get('/home', 'ProductController@index')->name('home');
+Route::post('/comprar', 'OrderController@comprar');

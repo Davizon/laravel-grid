@@ -1,6 +1,7 @@
-@extends('plantilla')
+@extends('layouts.app')
 
-@section('seccion')
+@section('content')
+<div class="container">
 <div class="row">
   <div class="col">
     <h1>Editar producto {{ $product->id }}</h1>
@@ -9,7 +10,7 @@
 
   <div class="row">
     <div class="col">
-      <a class="btn btn-secondary" href="/expense_reports">Back</a>
+      <a class="btn btn-secondary" href="/products">Back</a>
     </div>
   </div>
 
@@ -34,6 +35,17 @@
               </select>
           </div>
           <div class="form-group">
+              <label for="isCategoryHome">Categoria De la Pagina de Home:</label>
+              <select class="form-control" id="isCategoryHome" name="isCategoryHome">
+                  <option value="0">Si</option>
+                  <option value="1">No</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="title">Categoria:</label>
+              <input type="text" class="form-control" id="category" name="category" placeholder="Escribe la url de la imagen" value="{{$category->name}}">
+          </div>
+          <div class="form-group">
             <label for="price">Precio:</label>
             <input type="text" class="form-control" id="price" name="price" value="{{$product->price}}" placeholder="Escribe un precio">
           </div>
@@ -45,4 +57,5 @@
       </form>
     </div>
   </div>
+</div>
 @endsection

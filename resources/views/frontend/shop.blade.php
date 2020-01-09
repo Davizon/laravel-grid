@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="{{ asset('assets/css/home-styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/assets/css/shop.css">
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Productos</title>
+    <title>Tienda</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/shop.css') }}">
 </head>
 <body>
-        <div id="app">
+    <div id="app">
           <div class="Home">
               <header class="Home__Header">
                   <div class="Home__Header--infobar">
@@ -47,19 +48,32 @@
                       @endif
                   </div>
               </header>
-
-              <div class="Home__products">
+           </div>
+        </div>
+        <div class="shop">
+            <div class="shop__title">
+                <h1>Todos los autos</h1>
+            </div>
+            <div class="shop__sections">
                 @foreach($products as $product)
-                <div class="Home__products--product">
-                        <img src="{{$product->image}}" alt="">
-                <h1 class="Home__products--details">Nombre: {{$product->name}}</h1>
-                <p class="Home__products--details">Descripcion: {{$product->description}}</p>
-                <p class="Home__products--details">isTrending: {{$product->isTrending}}</p>
-                <p class="Home__products--details">Precio: {{$product->price}}</p>
-                <span><a class="Home__products--details" href="/products/{{ $product->id }}/edit">Edit</a></span>
-                </div>
+                    <form class="shop__sections--product" action="/comprar" method="POST">
+                        @csrf
+                        <div class="image-shop">
+                            <img src="{{$product->image}}" alt="">
+                        </div>
+                        <h4>{{$product->name}}</h4>
+                        <input type="text" hidden name="product_id" value="{{$product->id}}">
+                        <input type="text" hidden name="product_name" value="{{$product->name}}">
+                        <p>DOP <strong>{{$product->price}}</strong></p>
+                        @if($role === "admin" || $role === "client")
+                        <button type="submit" class="button details">Comprar</button>
+                        @else
+                            <a style="text-align: center;" href="/login" class="button details">Comprar</a>
+                        @endif
+                    </form>
                 @endforeach
 
-
+            </div>
+        </div>
 </body>
 </html>

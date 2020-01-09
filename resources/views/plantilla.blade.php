@@ -8,7 +8,7 @@
   </head>
   <body>
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Taigers Diller</a>
+        <a class="navbar-brand" href="/">Taigers Diller</a>
       </nav>
       <div class="container">
         @yield('seccion')

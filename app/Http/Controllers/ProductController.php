@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,11 +22,14 @@ class ProductController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->role === "client"){
+            return redirect('/');
+        }
         $products = product::all();
         return view('backend.home',
         [
-            'products' => $products
-
+            'products' => $products,
+            'role' => Auth::user()->role ?? ''
         ]
     );
     }
@@ -30,6 +41,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->role === "client"){
+            return redirect('/');
+        }
         return view('backend.create');
     }
 
@@ -49,6 +63,11 @@ class ProductController extends Controller
         $Products->image = $request->get('image');
         $Products->save();
 
+        $category = new Category();
+        $category->product_id = $Products->id;
+        $category->name = $request->get('category');
+        $category->categoryIsHome = $request->get('categoryIsHome');
+        $category->save();
         return redirect('/products/');
 
     }
@@ -72,9 +91,15 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        if (Auth::user()->role === "client"){
+            return redirect('/');
+        }
         $products = Product::findOrFail($id);
+        $category = Category::findOrFail($id);
         return view('backend.edit', [
-            'product' => $products
+            'product' => $products,
+            'category' => $category
+
         ]);
 
     }
@@ -88,7 +113,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $product = product::find($id);
+         $product = product::findOrFail($id);
          $product->name = $request->get('name');
          $product->description = $request->get('description');
          $product->isTrending = $request->get('isTrending');
@@ -96,7 +121,11 @@ class ProductController extends Controller
          $product->image = $request->get('image');
          $product->save();
 
-         return redirect('/products');
+        $category =  Category::findOrFail($id);
+        $category->name = $request->get('category');
+        $category->categoryIsHome = $request->get('categoryIsHome');
+        $category->save();
+         return redirect('/products/');
     }
 
     /**
